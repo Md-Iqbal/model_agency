@@ -68,120 +68,41 @@
     <main>
         <!-- Hero -->
         <div class="hero-slider-wr default-slick-button home-slider">
-            <section class="full-width-bg" style="background-image: url('static/assets/img/demo/slide_1.jpg')">
+            {% for i in news %}
+            <section class="full-width-bg" style="background-image: url('{{ i.image.url }}')">
                 <div class="container">
                     <div class="full-width-bg-inner">
-                        <h2 class="title">Model School</h2>
-                        <p class="sub-title">Make your life successful</p> <a href="13_Blog_Open_Widget.html"
-                            class="btn-classic">Watch Now<i class="icon ion-play"></i></a>
+                        <h2 class="title">{{ i.title }}</h2>
+                        <p class="sub-title">Make your life successful</p>
                     </div>
                 </div>
             </section>
-            <section class="full-width-bg" style="background-image: url('static/assets/img/demo/slide_2.jpg')">
-                <div class="container">
-                    <div class="full-width-bg-inner">
-                        <h2 class="title">Become Model</h2>
-                        <p class="sub-title">Make your life successful</p> <a href="13_Blog_Open_Widget.html"
-                            class="btn-classic">Watch Now<i class="icon ion-play"></i></a>
-                    </div>
-                </div>
-            </section>
+            {% endfor %}
         </div> <!-- End Hero -->
         <!-- Recently Featured List -->
         <section class="container recently-featured">
             <h2 class="section-title lines">Recently Featured</h2>
             <div class="row">
                 <div class="recently-featured-slider">
-                    <article class="col-md-6 col-lg-4"> <a href="05_Model_Profile.html" class="item-wr">
-                            <div class="model-item"
-                                style="background-image: url('static/assets/img/demo/stock_15_575x500.jpg')">
+                    {% for i in random_model %}
+                    <article class="col-md-6 col-lg-4"> <a href="{% url 'ModelDetailView' pk=i.id %}" class="item-wr">
+                            <div class="model-item" style="background-image: url('{{ i.title_image.url }}')">
                                 <div class="model-info">
-                                    <p>Height: <span>185</span></p>
-                                    <p>Bust: <span>85</span></p>
-                                    <p>Waist: <span>60</span></p>
-                                    <p>Age: <span>17</span></p>
-                                    <p>Hair: <span>Red</span></p>
-                                    <p>Eyes: <span>Blue</span></p>
-                                    <p class="rating"> <i class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> </p>
+                                    <p>Height: <span>{{ i.height }}</span></p>
+                                    <p>Bust: <span>{{ i.bust }}</span></p>
+                                    <p>Waist: <span>{{ i.waist }}</span></p>
+                                    <p>Hips: <span>{{ i.hips }}</span></p>
+                                    <p>Age: <span>{{ i.age }}</span></p>
+                                    <p>Hair: <span>{{ i.hair_color }}</span></p>
+                                    <p>Eyes: <span>{{ i.eye_color }}</span></p>
                                 </div>
                             </div>
-                            <h3 class="title">Selena Trade</h3>
+                            <h3 class="title">{{ i.name }}</h3>
                         </a> </article>
-                    <article class="col-md-6 col-lg-4"> <a href="05_Model_Profile.html" class="item-wr">
-                            <div class="model-item"
-                                style="background-image: url('static/assets/img/demo/stock_16_575x500.jpg')">
-                                <div class="model-info">
-                                    <p>Height: <span>185</span></p>
-                                    <p>Bust: <span>85</span></p>
-                                    <p>Waist: <span>60</span></p>
-                                    <p>Age: <span>17</span></p>
-                                    <p>Hair: <span>Red</span></p>
-                                    <p>Eyes: <span>Blue</span></p>
-                                    <p class="rating"> <i class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> </p>
-                                </div>
-                            </div>
-                            <h3 class="title">Jennis Griffin</h3>
-                        </a> </article>
-                    <article class="col-md-6 col-lg-4"> <a href="05_Model_Profile.html" class="item-wr">
-                            <div class="model-item"
-                                style="background-image: url('static/assets/img/demo/stock_17_575x500.jpg')">
-                                <div class="model-info">
-                                    <p>Height: <span>185</span></p>
-                                    <p>Bust: <span>85</span></p>
-                                    <p>Waist: <span>60</span></p>
-                                    <p>Age: <span>17</span></p>
-                                    <p>Hair: <span>Red</span></p>
-                                    <p>Eyes: <span>Blue</span></p>
-                                    <p class="rating"> <i class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> </p>
-                                </div>
-                            </div>
-                            <h3 class="title">Alesandra Andorio</h3>
-                        </a> </article>
-                    <article class="col-md-6 col-lg-4"> <a href="05_Model_Profile.html" class="item-wr">
-                            <div class="model-item"
-                                style="background-image: url('static/assets/img/demo/stock_21_575x500.jpg')">
-                                <div class="model-info">
-                                    <p>Height: <span>185</span></p>
-                                    <p>Bust: <span>85</span></p>
-                                    <p>Waist: <span>60</span></p>
-                                    <p>Age: <span>17</span></p>
-                                    <p>Hair: <span>Red</span></p>
-                                    <p>Eyes: <span>Blue</span></p>
-                                    <p class="rating"> <i class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> <i
-                                            class="fa fa-star active" aria-hidden="true"></i> </p>
-                                </div>
-                            </div>
-                            <h3 class="title">Jennis Griffin</h3>
-                        </a> </article>
+                    {% endfor %}
                 </div>
             </div>
         </section> <!-- End Recently Featured List -->
-        <!-- Full Width Background -->
-        <section class="full-width-bg wrap" style="background-image: url('static/assets/img/demo/stock_10_1900x600.jpg')">
-            <div class="container">
-                <div class="full-width-bg-inner">
-                    <h2 class="title">Perfect Castings</h2>
-                    <p class="sub-title">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis
-                        bibendum auctor, nisi elit consequat ipsum, nec sagi ttis sem nibh id elit. Duis sed odio sit
-                        amet nibh vulputate.</p> <a href="21_Sign_In.html" class="btn-classic">Get Started</a>
-                </div>
-            </div>
-        </section> <!-- End Full Width Background -->
         <!-- Testimonials -->
         <div class="full-width-bg testimonials" style="background-image: url('static/assets/img/demo/testimonials-bg.jpg')">
             <div class="container">
@@ -214,36 +135,25 @@
         <section class="container last-posts">
             <h2 class="section-title lines">Latest From Journal</h2>
             <div class="row">
-                <article class="col-md-6 last-post-wr"> <a href="13_Blog_Open_Widget.html"
+                {% for i in news %}
+                <article class="col-md-6 last-post-wr"> <a href="{% url 'NewsDetailView' pk=i.id %}"
                         class="post-item no-decoration">
                         <figure class="post-image"
-                            style="background-image: url('static/assets/img/demo/stock_18_575x350.jpg')">
+                            style="background-image: url('{{ i.image.url }}')">
                             <div class="info">
                                 <p class="post-btn">View post</p>
-                                <p class="post-publish"> <span class="publish-date">Dec 25, 2017</span> <span
-                                        class="separator">·</span> <span class="publish-time">1 Minute</span> </p>
+                                <p class="post-publish"> <span class="publish-date">{{ i.updated|timesince }}</span> <span
+                                        class="separator">·</span> <span class="publish-time">ago</span> </p>
                             </div>
                         </figure>
                         <footer class="post-footer">
-                            <p class="post-category">Agency</p>
-                            <h3 class="post-title">Perfect Fashion Show</h3>
+                            {% if i.type %}
+                            <p class="post-category">{{ i.type }}</p>
+                            {% endif %}
+                            <h3 class="post-title">{{ i.title }}</h3>
                         </footer>
                     </a> </article>
-                <article class="col-md-6 last-post-wr"> <a href="13_Blog_Open_Widget.html"
-                        class="post-item no-decoration">
-                        <figure class="post-image"
-                            style="background-image: url('static/assets/img/demo/stock_19_575x350.jpg')">
-                            <div class="info">
-                                <p class="post-btn">View post</p>
-                                <p class="post-publish"> <span class="publish-date">Dec 25, 2017</span> <span
-                                        class="separator">·</span> <span class="publish-time">1 Minute</span> </p>
-                            </div>
-                        </figure>
-                        <footer class="post-footer">
-                            <p class="post-category">Ashion</p>
-                            <h3 class="post-title">Changing Style WIth Makeup</h3>
-                        </footer>
-                    </a> </article>
+                {% endfor %}
             </div>
         </section> <!-- End Last Posts -->
     </main> <!-- Footer -->
