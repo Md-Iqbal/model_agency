@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from geniuscript.com/listing-themes.com/devon-html/08_Models_List.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 18:43:05 GMT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devon - Models List</title> <!-- Bootstrap CSS -->
+    <!-- Font Awesome Icons -->
+    <!-- Ionicons Icons -->
+    <!-- Google Fonts -->
+    <!-- Slick Slider CSS -->
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href='{% static "" %}assets/cache/css_08_models_list.min.css' />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header full-width fixed">
+        <div class="container-fluid">
+            <div class="header-inner"> <a href="01_Home.html" class="site-logo">
+                    <h1 class="site-logo-title">Devon</h1>
+                    <h1 class="site-logo-text">model agency</h1>
+                </a>
+                <div class="navigation-wr">
+                    <form id="search-form"> <input type="search" name="search" class="search" placeholder="Search">
+                        <span class="submit-wr"> <input type="submit" class="submit"> </span> </form>
+                    <nav class="navigation">
+                        <ul>
+                            <li class="menu-item-has-children"> <a href="#">Home</a> <span
+                                    class="sub-menu-toggle"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="01_Home.html">Dark with carousel</a></li>
+                                    <li><a href="03_Home.html">Dark with find model</a></li>
+                                    <li><a href="04_Home.html">White version</a></li>
+                                    <li><a href="25_Search_By_Geo_Map.html">Geo maps regions</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children current-menu-parent"> <a href="#">Models</a> <span
+                                    class="sub-menu-toggle"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="06_Models_Load_More.html">Side version (load more)</a></li>
+                                    <li><a href="07_Models_Load_More_Alternative.html">Side version (load more) Alt</a>
+                                    </li>
+                                    <li><a href="09_Models_Map_View.html">Side version (pagination)</a></li>
+                                    <li><a href="10_Models_Map_Big.html">Side version (pagination) Alt</a></li>
+                                    <li class="current-menu-item"><a href="08_Models_List.html">List version</a></li>
+                                    <li><a href="23_Full_Screen_Map_Search.html">Map search</a></li>
+                                    <li><a href="24_Alternative_Search_View.html">Map search Alt</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"> <a href="#">About</a> <span
+                                    class="sub-menu-toggle"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="19_About_Us.html">About us</a></li>
+                                    <li><a href="15_Contact.html">Contact us</a></li>
+                                    <li><a href="16_Contact.html">Contact us Alt</a></li>
+                                    <li><a href="18_Pricing.html">Pricing</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"> <a href="#">Pages</a> <span
+                                    class="sub-menu-toggle"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="05_Model_Profile.html">Model Profiles</a></li>
+                                    <li><a href="12_Blog_Grid.html">Blog Grid</a></li>
+                                    <li><a href="13_Blog_Grid_Alternative.html">Blog Grid Alternative</a></li>
+                                    <li><a href="12_Blog_Grid_Standart.html">Blog Grid Standart</a></li>
+                                    <li><a href="12_Blog_Standart.html">Blog Standart</a></li>
+                                    <li><a href="14_Blog_Open.html">Blog open</a></li>
+                                    <li><a href="17_FAQ.html">FAQ</a></li>
+                                    <li><a href="20_Log_In.html">Sign In</a></li>
+                                    <li><a href="21_Sign_In.html">Register</a></li>
+                                    <li><a href="26_Search_By_Geo_Map_Full_Screen.html">Geo map</a></li>
+                                </ul>
+                            </li>
+                            <li class=""> <a href="Faetured.html">Featured</a> </li>
+                        </ul>
+                    </nav>
+                    <div class="right-sec-nav d-flex align-items-center"> <a href="20_Log_In.html"
+                            class="login d-flex align-items-center"> <i class="icon ion-ios-person-outline"></i> </a>
+                        <div class="lang-menu-wr"> <button class="btn lang-toggle"> <span>EN</span> <i
+                                    class="icon ion-ios-arrow-down"></i> </button>
+                            <ul class="lang-menu">
+                                <li><a href="#">EN</a></li>
+                                <li><a href="#">HR</a></li>
+                                <li><a href="08_Models_List_rtl.html">AR</a></li>
+                            </ul>
+                        </div>
+                    </div> <i class="fa fa-times" aria-hidden="true"></i>
+                </div> <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+        </div>
+    </header> <!-- Navbar -->
+    <main>
+        <!-- Models List -->
+        <div class="container-fluid sort-models-wrapper models-list columns columns-list">
+            <div class="row">
+                <div class="col-lg-6 col-xl-8 models-list-inner content-wrapper">
+                    <div class="model-row-wrap">
+                        <div class="row">
+                            {% if model %}
+                            {% for i in model %}
+                            <div class="col-sm-6 col-lg-12 models-list-item">
+                                <article class="model-row">
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-2 offset-xl-0">
+                                            <a href="{% url 'ModelDetailView' pk=i.id %}" class="img-wr">
+                                                <img src="{{ i.title_image.url }}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <div class="row-model-info">
+                                                <h3 class="title"> <a href="{% url 'ModelDetailView' pk=i.id %}">{{ i.name }}</a> </h3>
+                                                <div class="model-attr">
+                                                    <p class="attr-item"> <span class="attr-name">Height:</span> <span
+                                                            class="attr-value">{{ i.height }}</span> </p>
+                                                    <p class="attr-item"> <span class="attr-name">Bust:</span> <span
+                                                            class="attr-value">{{ i.bust }}</span> </p>
+                                                    <p class="attr-item"> <span class="attr-name">Waist:</span> <span
+                                                            class="attr-value">{{ i.waist }}</span> </p>
+                                                    <p class="attr-item"> <span class="attr-name">Hip:</span> <span
+                                                            class="attr-value">{{ i.hips }}</span> </p>
+                                                    <p class="attr-item"> <span class="attr-name">Age:</span> <span
+                                                            class="attr-value">{{ i.age }}</span> </p>
+                                                    <p class="attr-item"> <span class="attr-name">Hair:</span> <span
+                                                            class="attr-value">{{ i.hair_color }}</span> </p>
+                                                    <p class="attr-item"> <span class="attr-name">Eyes:</span> <span
+                                                            class="attr-value">{{ i.eye_color }}</span> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-2">
+                                            <p class="soc-icons-wr">
+                                                {% if i.instagram %}
+                                                <a href="{{ i.instagram }}" class="soc-icon" target="_blank">
+                                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                                </a>
+                                                {% endif %}
+                                                {% if i.twitter %}
+                                                <a href="{{ i.twitter }}" class="soc-icon" target="_blank">
+                                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                </a>
+                                                {% endif %}
+                                                {% if i.facebook %}
+                                                <a href="{{ i.facebook }}" class="soc-icon" target="_blank">
+                                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                </a>
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            {% endfor %}
+                            {% else %}
+                            <div class="col-sm-4 col-lg-4 models-list-item">
+                                <b>
+                                    <h3>No model Available right now!!!</h3>
+                                </b>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <!-- <nav class="pagination"> <a href="#" class="page-numbers current">1</a> <a href="#"
+                                class="page-numbers">2</a> <a href="#" class="page-numbers">3</a> <a href="#"
+                                class="page-numbers next">»</a> </nav> -->
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Models List -->
+    </main> <!-- Footer -->
+    <footer class="site-footer fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="offset-lg-6 col-lg-6 offset-xl-4 col-xl-8">
+                    <div class="soc-icons-wrap"> <a href="#" class="soc-icon"><i class="fa fa-facebook"
+                                aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-instagram"
+                                aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-twitter"
+                                aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-pinterest"
+                                aria-hidden="true"></i></a> </div>
+                    <p class="copyright">&#169; 2018 Devon</p>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- End Footer -->
+    <!-- Jquery core -->
+    <!-- Slick Slider Core -->
+    <!-- All Sliders Initialization -->
+    <!-- Custom -->
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95zDTtfBmAopNLYu3nBKVTLEBanURbM8"></script>
+    <script src='{% static "" %}assets/cache/js_08_models_list.min.js'></script>
+</body>
+<!-- Mirrored from geniuscript.com/listing-themes.com/devon-html/08_Models_List.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 18:43:07 GMT -->
+
+</html>

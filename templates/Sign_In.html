@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from geniuscript.com/listing-themes.com/devon-html/21_Sign_In.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 18:44:31 GMT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devon - Sign Up</title> <!-- Bootstrap CSS -->
+    <!-- Font Awesome Icons -->
+    <!-- Ionicons Icons -->
+    <!-- Google Fonts -->
+    <!-- Slick Slider CSS -->
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href='{% static "" %}assets/cache/css_21_sign_in.min.css' />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner"> <a href="{% url 'IndexView' %}" class="site-logo">
+                    <h1 class="site-logo-title">Devon</h1>
+                    <h1 class="site-logo-text">model agency</h1>
+                </a>
+                <div class="navigation-wr">
+                    <nav class="navigation">
+                        <ul>
+                            <li class="menu-item-has-children"> <a href="{% url 'IndexView' %}">Home</a>
+                            </li>
+                            <li class="menu-item-has-children"> <a href="#">Models</a> <span
+                                    class="sub-menu-toggle"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="06_Models_Load_More.html">Side version (load more)</a></li>
+                                    <li><a href="07_Models_Load_More_Alternative.html">Side version (load more) Alt</a>
+                                    </li>
+                                    <li><a href="09_Models_Map_View.html">Side version (pagination)</a></li>
+                                    <li><a href="10_Models_Map_Big.html">Side version (pagination) Alt</a></li>
+                                    <li><a href="08_Models_List.html">List version</a></li>
+                                    <li><a href="23_Full_Screen_Map_Search.html">Map search</a></li>
+                                    <li><a href="24_Alternative_Search_View.html">Map search Alt</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children"> <a href="#">About</a> <span class="sub-menu-toggle"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="19_About_Us.html">About us</a></li>
+                                    <li><a href="15_Contact.html">Contact us</a></li>
+                                    <li><a href="17_FAQ.html">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li class=""> <a href="{% url 'NewsView' %}">News</a>
+                            </li>
+                            <li class=""> <a href="Faetured.html">Featured</a> </li>
+                        </ul>
+                    </nav>
+                    <div class="right-sec-nav d-flex align-items-center">
+                        <a href="{% url 'LoginView' %}" class="login d-flex align-items-center"> <i class="icon ion-ios-person-outline"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> <!-- End Navbar -->
+    <main>
+        <!-- Forms -->
+        <div class="sign-form-wr">
+            <div class="container">
+                <div class="sign-form-inner">
+                    <header class="sign-header">
+                        <a class="log-in tab" href="{% url 'LoginView' %}">
+                            Log In
+                        </a>
+                        <div class="sign-up tab active" data-form="sign-up-form">Sign Up</div>
+                    </header>
+                    <!-- Sign In -->
+                    <div class="form-wr sign-up-form active">
+                        <p class="title">Sign Up</p>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="text" name="username" placeholder="Username" class="login" required>
+                            <input type="password" name="password" placeholder="Password" class="password" required>
+                            {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-danger">{{ message }}</div>
+                            {% endfor %}
+                            {% endif %}
+                            <p class="submit">
+                                <button class="btn submit-btn" type="submit">Create Acoount</button>
+                            </p>
+                        </form>
+                        <p class="lines section-title">Or</p> <a href="#" class="facebook"><i class="fa fa-facebook"
+                                aria-hidden="true"></i>Sign in with facebook</a>
+                    </div> <!-- End Sign In -->
+                </div>
+            </div>
+        </div> <!-- Forms -->
+    </main> <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="soc-icons-wrap"> <a href="#" class="soc-icon"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-instagram"
+                        aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-pinterest"
+                        aria-hidden="true"></i></a> </div>
+            <p class="copyright">&#169; 2018 Devon</p>
+        </div>
+    </footer> <!-- End Footer -->
+    <!-- Jquery core -->
+    <!-- Slick Slider Core -->
+    <!-- All Sliders Initialization -->
+    <!-- Custom -->
+    <script src='{% static "" %}assets/cache/js_21_sign_in.min.js'></script>
+</body>
+<!-- Mirrored from geniuscript.com/listing-themes.com/devon-html/21_Sign_In.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 18:44:33 GMT -->
+
+</html>
