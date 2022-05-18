@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from geniuscript.com/listing-themes.com/devon-html/01_Home.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 18:41:07 GMT -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-control" content="public">
-    <title>Devon - Home Page 01</title> <!-- Bootstrap CSS -->
+    <title>Talent Camp - Home Page 01</title> <!-- Bootstrap CSS -->
     <!-- Font Awesome Icons -->
     <!-- Ionicons Icons -->
     <!-- Google Fonts -->
@@ -20,27 +19,28 @@
     <header class="header">
         <div class="container">
             <div class="header-inner"> <a href="{% url 'IndexView' %}" class="site-logo">
-                    <h1 class="site-logo-title">Devon</h1>
+                    <h1 class="site-logo-title">Talent Camp</h1>
                     <h1 class="site-logo-text">model agency</h1>
                 </a>
                 <div class="navigation-wr">
                     <nav class="navigation">
                         <ul>
-                            <li class="menu-item-has-children current-menu-parent"> <a href="{% url 'IndexView' %}">Home</a>
+                            <li>
+                                <a href="{% url 'IndexView' %}">Home</a>
                             </li>
                             <li>
                                 <a href="{% url 'ModelView' %}">Models</a>
                             </li>
-                            <li class="menu-item-has-children"> <a href="#">About</a> <span
-                                    class="sub-menu-toggle"></span>
-                                <ul class="sub-menu">
-                                    <li><a href="19_About_Us.html">About us</a></li>
-                                    <li><a href="{% url 'ContactView' %}">Contact us</a></li>
-                                    <li><a href="17_FAQ.html">FAQ</a></li>
-                                </ul>
-                            </li>
                             <li>
                                 <a href="{% url 'NewsView' %}">News</a>
+                            </li>
+                            <li class="menu-item-has-children"> <a>Other</a>
+                                <span class="sub-menu-toggle"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'AboutView' %}">About us</a></li>
+                                    <li><a href="{% url 'ContactView' %}">Contact us</a></li>
+                                    <li><a href="{% url 'FaqView' %}">FAQ</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>
@@ -254,7 +254,7 @@
                         aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-twitter"
                         aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-pinterest"
                         aria-hidden="true"></i></a> </div>
-            <p class="copyright">&#169; 2018 Devon</p>
+            <p class="copyright">&#169; 2022 Talent Camp</p>
         </div>
     </footer> <!-- End Footer -->
     <!-- Jquery core -->
@@ -263,6 +263,5 @@
     <!-- Custom -->
     <script src='static/assets/cache/js_01_home.min.js'></script>
 </body>
-<!-- Mirrored from geniuscript.com/listing-themes.com/devon-html/01_Home.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 18:41:49 GMT -->
 
 </html>

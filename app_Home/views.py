@@ -27,12 +27,20 @@ def NewsView(request):
 def NewsDetailView(request, pk):
     print(pk)
     news = News.objects.get(pk=pk)
+    recent_news = News.objects.order_by('-created')[:5]
     reviews = Review.objects.filter(news=news)
+    number_of_reviews = reviews.count()
+    if number_of_reviews is None:
+        number_of_reviews = 0
+    else:
+        number_of_reviews = int(number_of_reviews)
     print(news)
     print("Reviews ===> ",reviews)
     context = {
         'news': news, 
-        'reviews': reviews
+        'reviews': reviews,
+        'recent_news': recent_news,
+        'number_of_reviews': number_of_reviews
     }
     return render(request, 'Single_Blog.html', context)
 

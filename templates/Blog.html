@@ -1,12 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from geniuscript.com/listing-themes.com/devon-html/13_Blog_Grid_Alternative.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 18:43:55 GMT -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devon - Blog Grid Alt</title> <!-- Bootstrap CSS -->
+    <title>Talent Camp - Blog Grid Alt</title> <!-- Bootstrap CSS -->
     <!-- Font Awesome Icons -->
     <!-- Ionicons Icons -->
     <!-- Google Fonts -->
@@ -19,65 +18,48 @@
     <!-- Navbar -->
     <header class="header">
         <div class="container">
-            <div class="header-inner"> <a href="01_Home.html" class="site-logo">
-                    <h1 class="site-logo-title">Devon</h1>
+            <div class="header-inner"> <a href="{% url 'IndexView' %}" class="site-logo">
+                    <h1 class="site-logo-title">Talent Camp</h1>
                     <h1 class="site-logo-text">model agency</h1>
                 </a>
                 <div class="navigation-wr">
                     <nav class="navigation">
                         <ul>
-                            <li class="menu-item-has-children"> <a href="#">Home</a> <span
-                                    class="sub-menu-toggle"></span>
+                            <li>
+                                <a href="{% url 'IndexView' %}">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'ModelView' %}">Models</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'NewsView' %}">News</a>
+                            </li>
+                            <li class="menu-item-has-children"> <a>Other</a>
+                                <span class="sub-menu-toggle"></span>
                                 <ul class="sub-menu">
-                                    <li><a href="01_Home.html">Dark with carousel</a></li>
-                                    <li><a href="03_Home.html">Dark with find model</a></li>
-                                    <li><a href="04_Home.html">White version</a></li>
-                                    <li><a href="25_Search_By_Geo_Map.html">Geo maps regions</a></li>
+                                    <li><a href="{% url 'AboutView' %}">About us</a></li>
+                                    <li><a href="{% url 'ContactView' %}">Contact us</a></li>
+                                    <li><a href="{% url 'FaqView' %}">FAQ</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children"> <a href="#">Models</a> <span
-                                    class="sub-menu-toggle"></span>
-                                <ul class="sub-menu">
-                                    <li><a href="06_Models_Load_More.html">Side version (load more)</a></li>
-                                    <li><a href="07_Models_Load_More_Alternative.html">Side version (load more) Alt</a>
-                                    </li>
-                                    <li><a href="09_Models_Map_View.html">Side version (pagination)</a></li>
-                                    <li><a href="10_Models_Map_Big.html">Side version (pagination) Alt</a></li>
-                                    <li><a href="08_Models_List.html">List version</a></li>
-                                    <li><a href="23_Full_Screen_Map_Search.html">Map search</a></li>
-                                    <li><a href="24_Alternative_Search_View.html">Map search Alt</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"> <a href="#">About</a> <span
-                                    class="sub-menu-toggle"></span>
-                                <ul class="sub-menu">
-                                    <li><a href="19_About_Us.html">About us</a></li>
-                                    <li><a href="15_Contact.html">Contact us</a></li>
-                                    <li><a href="17_FAQ.html">FAQ</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"> <a href="{% url 'NewsView' %}">News</a>
-                            </li>
-                            <li class=""> <a href="Faetured.html">Featured</a> </li>
                         </ul>
                     </nav>
-                    <div class="right-sec-nav d-flex align-items-center"> <a href="#" id="search-smart"
-                            class="d-flex align-items-center"> <i class="icon ion-ios-search"></i> </a>
-                        <div class="smart-search-form hidden"> <a href="#" class="smart-search-close"><i
-                                    class="ion ion-android-close"></i></a>
-                            <form class="search-wr"> <input type="text" id="search" name="search"
-                                    placeholder="Enter Keywords"> <button type="submit" class="submit" value=""><i
-                                        class="icon ion-ios-search"></i></button> </form>
-                        </div> <a href="20_Log_In.html" class="login d-flex align-items-center"> <i
-                                class="icon ion-ios-person-outline"></i> </a>
-                        <div class="lang-menu-wr"> <button class="btn lang-toggle"> <span>EN</span> <i
-                                    class="icon ion-ios-arrow-down"></i> </button>
+                    <div class="right-sec-nav d-flex align-items-center">
+                        {% if user.id is not None %}
+                        <div class="lang-menu-wr">
+                            <!-- <button class="btn lang-toggle login d-flex align-items-center"> -->
+                            <span class="btn lang-toggle login d-flex align-items-center">
+                                <i class="icon ion-ios-person-outline"></i>
+                            </span>
                             <ul class="lang-menu">
-                                <li><a href="#">EN</a></li>
-                                <li><a href="#">HR</a></li>
-                                <li><a href="13_Blog_Grid_Alternative_rtl.html">AR</a></li>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="{% url 'LogoutView' %}">Logout</a></li>
                             </ul>
                         </div>
+                        {% else %}
+                        <a href="{% url 'LoginView' %}" class="login d-flex align-items-center"> <i
+                                class="icon ion-ios-person-outline"></i> </a>
+                        {% endif %}
                     </div> <i class="fa fa-times" aria-hidden="true"></i>
                 </div> <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
@@ -129,7 +111,7 @@
                         aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-twitter"
                         aria-hidden="true"></i></a> <a href="#" class="soc-icon"><i class="fa fa-pinterest"
                         aria-hidden="true"></i></a> </div>
-            <p class="copyright">&#169; 2018 Devon</p>
+            <p class="copyright">&#169; 2022 Talent Camp</p>
         </div>
     </footer> <!-- End Footer -->
     <!-- Jquery core -->
@@ -138,6 +120,5 @@
     <!-- Custom -->
     <script src='{% static "" %}assets/cache/js_13_blog_grid_alternative.min.js'></script>
 </body>
-<!-- Mirrored from geniuscript.com/listing-themes.com/devon-html/13_Blog_Grid_Alternative.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 18:44:03 GMT -->
 
 </html>
